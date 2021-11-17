@@ -1,21 +1,29 @@
 ## DevOps Engineer - technical interview
 
-### Testing goals
-With this test, we want to see your ability to create a CI/CD pipeline and supporting infrastructure from scratch, as well as your skills as a system administrator.
+### Solutio Provided
+- There are 3 pipeline cofigured for the given task along with pre-requisite azure resources
+pipeline Pre-Req:
+GitHub Service Connection
+ARM service Connection
+Service priniciple for ARM service connection
 
-### The application
+Pipeline Name     | Second Header
+-------------     | -------------
+app-CI-pipeline   | Build Pipeline
+Dev_Release Cell  | Deployment Pipeline
+Infra-pipeline    | Terraform Pipeline [Web APP]
 
-The app is a simple weather lookup by user entered locations. 
+- Azure Resources - Pre-Req
+- Azure Resource Group
+- App Registration
+- Resource Name     | 
+-------------     | 
+Storage Acccount | 
+KeyVault    | 
+Azure Web App | 
 
-- The app targets version 3.1 of the dotnet core sdk
-- The app is built using [Blazor Server](https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-6.0). 
-- The app uses [AccuWeather API](https://developer.accuweather.com/accuweather-locations-api/apis) for lcoations lookup
-  -  You will need to create a free account with [AccuWeather](https://developer.accuweather.com/) in order to register an application and call their API.
-- The startup application is **BradyWeather.Blazor.Server.csproj**
-
-At the end of the exercise the application should look like below.  
-
-![Blazor Weather](Docs/BlazorWeather.gif)
+Deployed application reachable @ https://weatherman8870.azurewebsites.net/
+Please refer the relevant screenshot @ \devops-interview\.ci\screenshot
 
 ### The task
 Your task is to automate the deployment and provisioning of resources that host the app provided.
