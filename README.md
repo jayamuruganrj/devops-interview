@@ -1,11 +1,13 @@
 ## DevOps Engineer - technical interview
 
 ### Solutio Provided
-- There are 3 pipeline cofigured for the given task along with pre-requisite azure resources
+- There are 3 pipeline configured for the given task along with pre-requisite azure resources
+
 #### Pipeline Pre-Requisite:
 - GitHub Service Connection
 - ARM service Connection
 - Service priniciple for ARM service connection
+- API registered key should be updated 
 
 Pipeline Name     | Second Header
 -------------     | -------------
@@ -16,14 +18,15 @@ Infra-pipeline    | Terraform Pipeline [Web APP]
 #### Azure Resources - Pre-Requisite:
 - Azure Resource Group
 - App Registration / Service Prinicple
-| Resource Name     | 
--------------     | 
+| Resource Name  | 
+|-------------   | 
 |Storage Acccount | 
 |KeyVault    | 
 |Azure Web App | 
 
 - Deployed application reachable @ https://weatherman8870.azurewebsites.net/
-- Please refer the relevant screenshot [here] devops-interview\.ci\screenshot
+- Please refer the relevant screenshot [here][1]
+[1] .\devops-interview\.ci\screenshot "here"
 
 ### The task
 Your task is to automate the deployment and provisioning of resources that host the app provided.
