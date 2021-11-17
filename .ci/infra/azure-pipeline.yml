@@ -19,6 +19,9 @@ steps:
 - checkout: self
   clean: true
 
+- task: TerraformInstaller@0
+  inputs:
+    terraformVersion: '0.14.9'
 
 - task: TerraformTaskV2@2
   inputs:
