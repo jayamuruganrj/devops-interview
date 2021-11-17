@@ -15,7 +15,7 @@ variables:
 stages:
 - stage: Dev_Build
   displayName: Development Build
-  condition: containes(variable['Build.SourceBranch'],'feature/deploy')
+  condition: contains(variable['Build.SourceBranch'],'feature/deploy')
   jobs:
       - job:
         steps:
