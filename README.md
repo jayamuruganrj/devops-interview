@@ -1,6 +1,6 @@
 ## DevOps Engineer - technical interview
 
-### Solutio Provided
+### Solution Provided
 - There are 3 pipeline configured for the given task along with pre-requisite azure resources
 
 #### Pipeline Pre-Requisite:
