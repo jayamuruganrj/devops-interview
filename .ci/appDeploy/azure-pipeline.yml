@@ -3,7 +3,7 @@
 name: $(Build.DefinitionName)_$(Date:yyyyMMdd)$(Rev:.r)
 
 trigger: none
-# - feature/deploy
+ - feature/deploy
 
 pool:
   vmImage: 'ubuntu-latest'
