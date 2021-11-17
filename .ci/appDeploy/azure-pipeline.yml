@@ -39,6 +39,8 @@ stages:
           inputs:
             command: 'publish'
             publishWebProjects: true
+            arguments: '--output $(Build.ArtifactStagingDirectory)'
+
 
         - task: PublishBuildArtifacts@1
           inputs:
