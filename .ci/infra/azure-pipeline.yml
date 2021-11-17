@@ -42,4 +42,4 @@ steps:
     command: 'plan'
     workingDirectory: '$(System.DefaultWorkingDirectory)/IaC/azure-modules/app-service'
     commandOptions: -var-file="$(System.DefaultWorkingDirectory)/IaC/azure-modules/app-service/variables.tfvars" -var subscription_id=$(subscription-id) -var client_id=$(client-id) -var client_secret=$(client-secret) -var tenant_id=$(tenant-id) -var app_name=$(web_app_name) -var app_plan=$(serviceplan_name) 
-    environmentServiceNameAzureRM: 'ARM-Connect-DevTest1'
+    environmentServiceNameAzureRM: 'ARM-Connect-DevTest'
