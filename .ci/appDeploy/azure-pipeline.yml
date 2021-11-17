@@ -53,5 +53,4 @@ stages:
             feedsToUsePublish: 'internal'
             vstsFeedPublish: '4659b0a4-a29f-4fb9-bfa1-414c60f7821c/693b0d3c-d949-488d-ba85-5a980bd98a60'
             vstsFeedPackagePublish: 'dev'
-            versionOption: 'patch'         
-
+            versionOption: 'patch'
