@@ -1,11 +1,15 @@
+locals{
+  region=var.region
+}
 data "azurerm_resource_group" "resource_group" {
   name     = var.rg_name #"TestGroup"
-  location = var.region #"East US 2"
+  # location = var.region #"East US 2"
 }
 
 resource "azurerm_app_service_plan" "testapp" {
-  name                = var.app_plan #"test-appserviceplan"
-  location            = data.azurerm_resource_group.resource_group.location
+  name                = var.app_plan #"test-appserviceplan"  
+  location            = local.region
+  # location            = data.azurerm_resource_group.resource_group.location
   resource_group_name = data.azurerm_resource_group.resource_group.name
   # mode="free"
 
@@ -16,8 +20,9 @@ resource "azurerm_app_service_plan" "testapp" {
 }
 
 resource "azurerm_app_service" "weatherman" {
-  name                = var.app_name
-  location            = data.azurerm_resource_group.resource_group.location
+  name                = var.app_name  
+  location            = local.region
+  # location            = data.azurerm_resource_group.resource_group.location
   resource_group_name = data.azurerm_resource_group.resource_group.name
   app_service_plan_id = azurerm_app_service_plan.testapp.id
 
