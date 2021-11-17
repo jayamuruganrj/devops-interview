@@ -2,10 +2,10 @@
 
 ### Solutio Provided
 - There are 3 pipeline cofigured for the given task along with pre-requisite azure resources
-pipeline Pre-Req:
-GitHub Service Connection
-ARM service Connection
-Service priniciple for ARM service connection
+#### Pipeline Pre-Requisite:
+- GitHub Service Connection
+- ARM service Connection
+- Service priniciple for ARM service connection
 
 Pipeline Name     | Second Header
 -------------     | -------------
@@ -13,17 +13,17 @@ app-CI-pipeline   | Build Pipeline
 Dev_Release Cell  | Deployment Pipeline
 Infra-pipeline    | Terraform Pipeline [Web APP]
 
-- Azure Resources - Pre-Req
+#### Azure Resources - Pre-Requisite:
 - Azure Resource Group
-- App Registration
-- Resource Name     | 
+- App Registration / Service Prinicple
+| Resource Name     | 
 -------------     | 
-Storage Acccount | 
-KeyVault    | 
-Azure Web App | 
+|Storage Acccount | 
+|KeyVault    | 
+|Azure Web App | 
 
-Deployed application reachable @ https://weatherman8870.azurewebsites.net/
-Please refer the relevant screenshot @ \devops-interview\.ci\screenshot
+- Deployed application reachable @ https://weatherman8870.azurewebsites.net/
+- Please refer the relevant screenshot [here] devops-interview\.ci\screenshot
 
 ### The task
 Your task is to automate the deployment and provisioning of resources that host the app provided.
