@@ -18,15 +18,13 @@ Infra-pipeline    | Terraform Pipeline [Web APP]
 #### Azure Resources - Pre-Requisite:
 - Azure Resource Group
 - App Registration / Service Prinicple
-| Resource Name  | 
-|-------------   | 
-|Storage Acccount | 
-|KeyVault    | 
-|Azure Web App | 
+- Resource Name  
+- Storage Acccount 
+- KeyVault  
+- Azure Web App
 
-- Deployed application reachable @ https://weatherman8870.azurewebsites.net/
-- Please refer the relevant screenshot [here][1]
-[1] .\devops-interview\.ci\screenshot "here"
+#### Deployed application reachable @ https://weatherman8870.azurewebsites.net/
+#### Please refer the relevant screenshot ### .\devops-interview\.ci\screenshot
 
 ### The task
 Your task is to automate the deployment and provisioning of resources that host the app provided.
