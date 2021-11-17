@@ -2,7 +2,7 @@
 
 name: $(Build.DefinitionName)_$(Date:yyyyMMdd)$(Rev:.r)
 
-trigger: none
+trigger: 
  - feature/deploy
 
 pool:
