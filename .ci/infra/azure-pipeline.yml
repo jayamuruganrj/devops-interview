@@ -7,10 +7,19 @@ pool:
   vmImage: 'ubuntu-20.04'
 
 variables:
-- ${{ if contains(variables['Build.SourceBranch'], 'feature/deploy') }}:
-    - group: demo-devtest
-    - template: ./env/test-vars.yml
-
+ - group: demo-devtest
+ - name: web_app_name
+   value: "weatherman8870"
+ - name: serviceplan_name
+   value: "ASP-TestGroup-plan"
+ - name: tf_version
+   value: 0.14.9  
+ - name: rg_name
+   value: TestGroup   
+ - name: azure_rm_svc
+   value: ARM-Connect-DevTest 
+  - name: app_state
+   value: app_tfstate      
 
 steps:
 - checkout: self
