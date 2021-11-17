@@ -3,7 +3,7 @@
 name: $(Build.DefinitionName)_$(Date:yyyyMMdd)$(Rev:.r)
 
 trigger:
-- none
+- feature/deploy
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -15,6 +15,7 @@ variables:
 stages:
 - stage: Dev_Build
   displayName: Development Build
+  condition: containes(variable['Build.SourceBranch'],'feature/deploy')
   jobs:
       - job:
         steps:
