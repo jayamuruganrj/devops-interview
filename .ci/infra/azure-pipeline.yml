@@ -7,13 +7,10 @@ pool:
   vmImage: 'ubuntu-20.04'
 
 variables:
- - group: demo-devtest
- - name: web_app_name
-   value: "weatherman"
- - name: serviceplan_name
-   value: "ASP-TestGroup-plan"
- - name: tf_version
-   value: 0.14.9  
+- ${{ if contains (variables['Build.SourceBranch'], 'feature/deploy') }}:
+    - group: demo-devtest
+    - template: ./env/test-vars.yml
+
 
 steps:
 - checkout: self
@@ -21,18 +18,18 @@ steps:
 
 - task: TerraformInstaller@0
   inputs:
-    terraformVersion: '0.14.9'
+    terraformVersion: '1.0.11'
 
 - task: TerraformTaskV2@2
   inputs:
     provider: 'azurerm'
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/IaC/azure-modules/app-service'
-    backendServiceArm: 'ARM-Connect-DevTest'
-    backendAzureRmResourceGroupName: 'TestGroup'
-    backendAzureRmStorageAccountName: 'jmtestacct'
-    backendAzureRmContainerName: 'jmtest'
-    backendAzureRmKey: 'app_tfstate'
+    backendServiceArm: $(azure_rm_svc) 
+    backendAzureRmResourceGroupName: $(rg_name) #''
+    backendAzureRmStorageAccountName: $(storage-account) #''
+    backendAzureRmContainerName: $(storage-container) #''
+    backendAzureRmKey: $(app_state) #''
 
 - task: TerraformTaskV2@2
   inputs:
@@ -45,4 +42,12 @@ steps:
     command: 'plan'
     workingDirectory: '$(System.DefaultWorkingDirectory)/IaC/azure-modules/app-service'
     commandOptions: -var-file="$(System.DefaultWorkingDirectory)/IaC/azure-modules/app-service/variables.tfvars" -var subscription_id=$(subscription-id) -var client_id=$(client-id) -var client_secret=$(client-secret) -var tenant_id=$(tenant-id) -var app_name=$(web_app_name) -var app_plan=$(serviceplan_name) 
-    environmentServiceNameAzureRM: 'ARM-Connect-DevTest'
+    environmentServiceNameAzureRM: $(azure_rm_svc)
+
+- task: TerraformTaskV2@2
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/IaC/azure-modules/app-service'
+    commandOptions: -var-file="$(System.DefaultWorkingDirectory)/IaC/azure-modules/app-service/variables.tfvars" -var subscription_id=$(subscription-id) -var client_id=$(client-id) -var client_secret=$(client-secret) -var tenant_id=$(tenant-id) -var app_name=$(web_app_name) -var app_plan=$(serviceplan_name) -auto-approve
+    environmentServiceNameAzureRM: $(azure_rm_svc)

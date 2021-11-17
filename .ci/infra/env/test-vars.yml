@@ -1,0 +1,8 @@
+variables:
+
+tf_version: 1.0.11
+web_app_name: weatherman
+serviceplan_name: ASP-TestGroup-plan
+azure_rm_svc: ARM-Connect-DevTest
+rg_name: TestGroup
+app_state: app_tfstate
