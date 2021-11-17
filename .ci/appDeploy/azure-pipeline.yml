@@ -39,9 +39,19 @@ stages:
           inputs:
             command: 'publish'
             publishWebProjects: true
-            arguments: '--configuration Release --output $(Build.ArtifactStagingDirectory)'
+
         - task: PublishBuildArtifacts@1
           inputs:
             PathtoPublish: '$(Build.ArtifactStagingDirectory)'
             ArtifactName: 'drop'
-            publishLocation: 'Container'            
+            publishLocation: 'Container'  
+
+        - task: UniversalPackages@0
+          inputs:
+            command: 'publish'
+            publishDirectory: '$(Build.ArtifactStagingDirectory)'
+            feedsToUsePublish: 'internal'
+            vstsFeedPublish: '4659b0a4-a29f-4fb9-bfa1-414c60f7821c/693b0d3c-d949-488d-ba85-5a980bd98a60'
+            vstsFeedPackagePublish: 'dev'
+            versionOption: 'patch'         
+
