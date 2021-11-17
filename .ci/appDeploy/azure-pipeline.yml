@@ -51,6 +51,6 @@ stages:
             command: 'publish'
             publishDirectory: '$(Build.ArtifactStagingDirectory)'
             feedsToUsePublish: 'internal'
-            vstsFeedPublish: '4659b0a4-a29f-4fb9-bfa1-414c60f7821c/693b0d3c-d949-488d-ba85-5a980bd98a60'
+            vstsFeedPublish: '60676893-bec0-4972-bc19-f18a69038ab9/6f7493f5-6fc0-4507-bb68-1cb91ea63f9d'
             vstsFeedPackagePublish: 'dev'
             versionOption: 'patch'
